@@ -49,6 +49,7 @@ class _SingleSelectionState extends State<SingleSelection> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade800,
       appBar: AppBar(
         title: const Text('Single Selection Example'),
       ),
@@ -89,23 +90,24 @@ class _SingleSelectionState extends State<SingleSelection> {
                       : const SizedBox.shrink(),
                   Column(
                     children: [
-                      Expanded(
-                        child: Image.asset(
-                          fit: BoxFit.cover,
-                          option['optionImage']!,
-                        ),
+                      Image.asset(
+                        height: isSelected ? 120 : 110,
+                        fit: BoxFit.cover,
+                        option['optionImage']!,
                       ),
                       const SizedBox(
                         height: 8,
                       ),
-                      Text(
-                        option['optionName']!,
-                        style: const TextStyle(
-                          color: Colors.black54,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                      isSelected
+                          ? const SizedBox.shrink()
+                          : Text(
+                              option['optionName']!,
+                              style: const TextStyle(
+                                color: Colors.white70,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w900,
+                              ),
+                            ),
                       const SizedBox(
                         height: 8,
                       ),

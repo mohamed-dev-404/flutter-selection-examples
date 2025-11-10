@@ -22,7 +22,7 @@ class CustomSendButton extends StatelessWidget {
       child: const Text(
         'Send',
         style: TextStyle(
-          color: Colors.white70,
+          color: Colors.white,
           fontSize: 18,
           fontWeight: FontWeight.bold,
         ),
